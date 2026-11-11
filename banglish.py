@@ -10,7 +10,7 @@ from pathlib import Path
 from google import genai
 from google.genai import types
 
-MODEL = os.getenv("GEMINI_MODEL", "gemini-2.5-flash")
+MODEL = os.getenv("GEMINI_MODEL", "gemini-3.8-flash")
 PROMPT_FILE = Path(__file__).parent / "prompts" / "banglish_style.md"
 
 _client = None
