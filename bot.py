@@ -29,6 +29,8 @@ from banglish import voice_to_banglish  # noqa: E402  (needs .env loaded first)
 
 logging.basicConfig(format="%(asctime)s %(levelname)s %(message)s", level=logging.INFO)
 log = logging.getLogger("banglish-bot")
+# httpx logs every request URL, which contains the bot token. Keep it quiet.
+logging.getLogger("httpx").setLevel(logging.WARNING)
 
 FEEDBACK_FILE = Path(os.getenv("FEEDBACK_FILE", "feedback.csv"))
 MAX_SECONDS = int(os.getenv("MAX_VOICE_SECONDS", "120"))
